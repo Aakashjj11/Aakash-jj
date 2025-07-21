@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Immediate Chat - RedCamp</title>
+  <link rel="stylesheet" href="dashstyle.css" />
+  <link rel="stylesheet" href="chat_box.css" />
+  <script type="module" src="js/chat.js"></script>
+</head>
+<body>
+
+  <div class="chatbox">
+    <div class="chat-header">
+      <span>Patient Request Form</span>
+      <button onclick="closeChat()">✖</button>
+    </div>
+
+    <div class="chat-form">
+      <input type="text" placeholder="Patient Name" id="pname" />
+      <input type="text" placeholder="Blood Group" id="bgroup" />
+      <input type="number" placeholder="Age" id="age" />
+      <input type="text" placeholder="Location" id="location" />
+      <input type="time" id="time" />
+      <button onclick="sendRequest()">Send Request</button>
+    </div>
+
+    <div class="chat-messages" id="chat-messages">
+      <div class="message donor">hari: Need B+ blood at Madurai at 10:20</div>
+      <div class="message you">You: I am willing to help hari</div>
+    </div>
+
+    <button class="responded">Responded</button>
+  </div>
+
+</body>
+</html>

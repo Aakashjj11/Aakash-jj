@@ -1,0 +1,177 @@
+/* Chatbox Overlay */
+.chatbox {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.chatbox.active {
+  display: block;
+}
+
+.chat-header {
+  background: #d50000;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Chat Messages */
+.chatbox .chat-messages {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+}
+
+.message {
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 10px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+.message.you {
+  background-color: #d50000;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.message.other {
+  background-color: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.message.reply {
+  background-color: #e0ffe0;
+  color: #222;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+/* Chat Form */
+.chatbox form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  background: #fff;
+}
+
+.chatbox input,
+.chatbox button {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#chat-form button,
+.chatbox button {
+  background-color: #d50000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chatbox button:hover {
+  background-color: #b00000;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .chatbox {
+    width: 95%;
+    right: 2.5%;
+    bottom: 15px;
+  }
+}
+.chatbox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.chat-header {
+  background: red;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-form input, .chat-form button {
+  width: 90%;
+  margin: 5px auto;
+  display: block;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.chat-form button {
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-messages {
+  padding: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.message {
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+
+.message.donor {
+  background-color: #f0f0f0;
+}
+
+.message.you {
+  background-color: #d4f8d4;
+}
+
+.responded {
+  background: red;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
