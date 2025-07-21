@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RedCamp Dashboard</title>
+  <link rel="stylesheet" href="dashstyle.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">RedCamp</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to RedCamp Dashboard</h1>
+    <p>You have successfully logged in!</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <i class="fas fa-comments"></i>
+        <h3>Immediate Chat</h3>
+        <p>Connect with nearby donors and hospitals instantly.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>Databases</h3>
+        <p>View donor databases and blood inventory in real time.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-book"></i>
+        <h3>Resources</h3>
+        <p>Find tips, FAQs, and donation guidelines in one place.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>New Members</h3>
+        <p>See who recently joined our network and community.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>RedCamp is committed to building a fast and reliable platform for connecting blood donors, recipients, and healthcare providers.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 RedCamp | All Rights Reserved</p>
+  </footer>
+
+  <!-- Firebase Logout Script -->
+  <script type="module">
+    import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCpTRWMUmBmpB0b4S2l7nsYbRi6X7GO3ok",
+      authDomain: "bloodlogin-b2343.firebaseapp.com",
+      projectId: "bloodlogin-b2343",
+      storageBucket: "bloodlogin-b2343.appspot.com",
+      messagingSenderId: "322344809469",
+      appId: "1:322344809469:web:a171e02328f7b77fea9f94",
+      measurementId: "G-S461Q0MDWM"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.logout = () => {
+      signOut(auth)
+        .then(() => {
+          alert("Logged out!");
+          window.location.href = "index.html"; // redirect to login/signup page
+        })
+        .catch((error) => {
+          alert("Logout error: " + error.message);
+        });
+    };
+  </script>
+</body>
+</html>
+
